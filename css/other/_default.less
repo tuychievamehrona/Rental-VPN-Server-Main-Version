@@ -1,0 +1,54 @@
+// main: ../style.less
+
+html,
+body {
+    font-size: 10px;
+
+    scrollbar-color: @secondary @primary;
+    scrollbar-width: auto;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    .font(400, 2rem);
+
+    background-color: @primary;
+
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+
+
+@media @large {
+    body {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+@media @desktop {
+    body {
+        font-size: 1.6rem;
+    }
+}
+
+
+
+@media @laptop {
+    body {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+@media @tablet {
+    body {
+        font-size: 1.2rem;
+    }
+}
