@@ -1,0 +1,174 @@
+// main: ../style.less
+.realtor {
+    .flex(normal);
+
+    height: auto;
+    min-height: calc(100vh - 21rem);
+    margin-bottom: 6rem;
+}
+
+
+
+.realtor__inner {
+    width: fit-content;
+    padding: 6rem;
+    margin: 0 auto;
+
+    background-color: @shadow;
+    border: 0.1rem dashed @secondary;
+}
+
+
+
+.realtor__title {
+    margin-bottom: 3rem;
+
+    .font(700, 2.4rem);
+}
+
+
+
+.realtor__text {
+    padding-left: 4rem;
+    margin-bottom: 3rem;
+
+    position: relative;
+}
+
+
+
+.realtor__number {
+    .element(3rem, 3rem, @secondary);
+    .flex(center);
+
+    font-weight: 700;
+    color: @primary;
+
+    border-radius: 50%;
+
+    .center(50%, 0, 0, -50%);
+}
+
+
+
+.realtor__link {
+    display: block;
+    width: fit-content;
+    padding: 1.5rem 3rem;
+    margin: 0 auto;
+
+    color: @secondary;
+    text-transform: uppercase;
+    text-align: center;
+
+    border: 0.1rem solid @secondary;
+    -webkit-box-shadow: 1rem 1rem 1rem @shadow;
+    -moz-box-shadow: 1rem 1rem 1rem @shadow;
+    box-shadow: 1rem 1rem 1rem @shadow;
+
+    transition: all 0.2s ease-in-out 0s;
+    position: relative;
+
+
+    &:hover,
+    &:focus {
+        color: @primary;
+
+        background-color: @secondary;
+
+        transform: translateY(-0.6rem);
+    }
+
+
+    &:after {
+        content: '';
+        width: 3rem;
+        height: 3rem;
+
+        border-radius: 100%;
+        border: 0.6rem solid @secondary;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+
+        transform: translate(-50%, -50%);
+        animation: ring 1.5s infinite;
+    }
+
+    &:hover:after,
+    &:focus:after {
+        animation: none;
+        display: none;
+    }
+
+
+    @keyframes ring {
+        0% {
+            width: 3rem;
+            height: 3rem;
+
+            opacity: 1;
+        }
+        100% {
+            width: 30rem;
+            height: 30rem;
+
+            opacity: 0;
+        }
+    }
+}
+
+
+
+@media @large {
+    .realtor__title {
+        font-size: 2rem;
+    }
+}
+
+
+
+@media @laptop {
+    .realtor__inner {
+        padding: 3rem;
+    }
+
+
+    .realtor__title {
+        margin-bottom: 1.5rem;
+
+        font-size: 1.6rem;
+    }
+
+
+    .realtor__link {
+        padding: 1rem 2rem;
+    }
+}
+
+
+
+@media @tablet {
+    .realtor__inner {
+        padding: 1.5rem;
+    }
+}
+
+
+
+@media @mobile {
+    .realtor__title {
+        text-align: center;
+    }
+}
+
+
+
+@media @small {
+    .realtor__title {
+        width: 18rem;
+        margin: 0 auto 3rem;
+    }
+}
